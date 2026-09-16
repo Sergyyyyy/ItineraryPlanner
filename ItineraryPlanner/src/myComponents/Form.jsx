@@ -14,6 +14,15 @@ const Form = () => {
     });
   };
 
+  // added new function for add capabilities.
+  const addEvent = () => {
+    
+
+    clearEvent();
+
+
+  }
+
   return (
     <>
       <div className="form-container">
@@ -28,7 +37,7 @@ const Form = () => {
               <button className="btn btn-clearEvent" onClick={clearEvent}>
                 Clear events -
               </button>
-              <button className="btn btn-addEvent">Add new event +</button>
+              <button className="btn btn-addEvent" onClick={addEvent}>Add new event +</button>
             </div>
           </div>
 

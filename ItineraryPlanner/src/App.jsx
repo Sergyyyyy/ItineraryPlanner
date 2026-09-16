@@ -5,7 +5,6 @@ function App() {
   return (
     <>
       <div className="app-container">
-        <h3>Itinerary Planner</h3>
         <Form />
       </div>
     </>

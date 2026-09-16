@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: white;
-  font-family: 'Caveat', cursive;
+  color: rgb(255, 0, 230);
+  font-family: "Caveat", cursive;
 }
 
 body {
@@ -21,8 +21,79 @@ body {
   height: 100vh;
 }
 
-.form-container{
-  border: 1px solid #FFF;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.form-top-container {
+  font-size: 3rem;
+  font-style: italic;
+  text-decoration: underline;
+  /* outline: 1px solid #fff; */
+  align-self: center;
+  justify-self: center;
+
+  position: absolute;
+  top: 80px;
+}
+
+.form-mid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  min-height: 350px;
+}
+
+.form-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  border-radius: 12px;
+  border: none;
+
+  transition: 0.4s ease-out;
+}
+
+.btn:hover {
+  background-color: #ea4fb9;
+  color: #590f42;
+}
+
+.btn:active {
+  background-color: #ebb9db;
+}
+
+.btn-container{
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-main-container {
+  border: 3px solid #b62f8b;
+  border-radius: 12px;
+
+  box-shadow: 0px 5px 5px #590f42;
 
   padding: 30px;
 
@@ -34,12 +105,42 @@ body {
   align-items: center;
 }
 
-.label{
+.label {
   font-size: 1.5rem;
 }
 
-.input-label{
+.input-label {
   font-size: 2rem;
   color: #000;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 10px;
+}
+
+.input-label:hover {
+  outline: solid 3px #ea4fb9;
+  box-shadow: 0px 5px 5px #b62f8b;
+}
+
+.input-label:focus {
+  outline: solid 3px #ea4fb9;
+  box-shadow: 0px 5px 5px #b62f8b;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 

@@ -1,13 +1,35 @@
+
+
 const Input = () => {
   return (
     <>
-        <label htmlFor="event-name" className="label event-name-label">EVENT NAME</label>
-        <input type="text" name="event-name" id="event-name" className="input-label label-name"/>
+      <div className="input-container">
+        <div className="input-item">
+          <label htmlFor="event-name" className="label event-name-label">
+            EVENT NAME
+          </label>
+          <input
+            type="text"
+            name="event-name"
+            id="event-name"
+            className="input-label label-name"
+          />
+        </div>
 
-        <label htmlFor="event-time" className="label event-time-label">EVENT TIME</label>
-        <input type="text" name="event-time" id="event-time" className="input-label label-time"/>
+        <div className="input-item">
+          <label htmlFor="event-time" className="label event-time-label">
+            EVENT TIME
+          </label>
+          <input
+            type="text"
+            name="event-time"
+            id="event-time"
+            className="input-label label-time"
+          />
+        </div>
+      </div>
     </>
-  )
+  );
 };
 
 export default Input;

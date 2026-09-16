@@ -1,6 +1,19 @@
+import { useState } from "react";
 import Input from "./Input";
 
 const Form = () => {
+  const [event, setEvent] = useState({
+    eventName: "",
+    eventTime: "",
+  });
+
+  const clearEvent = () => {
+    setEvent({
+      eventName: "",
+      eventTime: "",
+    });
+  };
+
   return (
     <>
       <div className="form-container">
@@ -10,9 +23,11 @@ const Form = () => {
 
         <div className="form-mid-container">
           <div className="form-main-container">
-            <Input />
+            <Input event={event} setEvent={setEvent} />
             <div className="btn-container">
-              <button className="btn btn-clearEvent">Clear events -</button>
+              <button className="btn btn-clearEvent" onClick={clearEvent}>
+                Clear events -
+              </button>
               <button className="btn btn-addEvent">Add new event +</button>
             </div>
           </div>

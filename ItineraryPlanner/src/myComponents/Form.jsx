@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Input from "./Input";
 
 const Form = () => {
@@ -6,6 +6,7 @@ const Form = () => {
     eventName: "",
     eventTime: "",
   });
+  const [events, setEvents] = useState([]);
 
   const clearEvent = () => {
     setEvent({
@@ -14,14 +15,15 @@ const Form = () => {
     });
   };
 
-  // added new function for add capabilities.
   const addEvent = () => {
-    
+    setEvents([...events, event]);
 
     clearEvent();
+  };
 
-
-  }
+  useEffect(() => {
+    console.log(events);
+  }, [events]);
 
   return (
     <>
@@ -37,7 +39,9 @@ const Form = () => {
               <button className="btn btn-clearEvent" onClick={clearEvent}>
                 Clear events -
               </button>
-              <button className="btn btn-addEvent" onClick={addEvent}>Add new event +</button>
+              <button className="btn btn-addEvent" onClick={addEvent}>
+                Add new event +
+              </button>
             </div>
           </div>
 

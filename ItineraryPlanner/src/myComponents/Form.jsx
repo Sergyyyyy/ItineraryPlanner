@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import Input from "./Input";
 
-const Form = () => {
-  const [event, setEvent] = useState({
-    eventName: "",
-    eventTime: "",
-  });
-  const [events, setEvents] = useState([]);
+const Form = ({setPage, event, setEvent, events, setEvents}) => {
 
   const clearEvent = () => {
     setEvent({
@@ -45,7 +40,7 @@ const Form = () => {
             </div>
           </div>
 
-          <button className="btn btn-downloadEvent">Download</button>
+          <button className="btn btn-downloadEvent" onClick={() => setPage("print")}>Download</button>
         </div>
       </div>
     </>

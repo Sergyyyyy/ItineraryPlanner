@@ -32,7 +32,7 @@ const Form = ({setPage, event, setEvent, events, setEvents}) => {
             <Input event={event} setEvent={setEvent} />
             <div className="btn-container">
               <button className="btn btn-clearEvent" onClick={clearEvent}>
-                Clear
+                Clear Input
               </button>
               <button className="btn btn-addEvent" onClick={addEvent}>
                 Add new Event
@@ -40,7 +40,7 @@ const Form = ({setPage, event, setEvent, events, setEvents}) => {
             </div>
           </div>
 
-          <button className="btn btn-downloadEvent" onClick={() => setPage("print")}>View Events</button>
+          <button className="btn btn-viewEvent" onClick={() => setPage("print")}>View Events</button>
         </div>
       </div>
     </>

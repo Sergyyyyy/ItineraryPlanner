@@ -8,11 +8,9 @@ const Print = ({ setPage, events, setEvents }) => {
   const downloadPDF = () => {
     const doc = new jsPDF();
 
-    // Page dimensions
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
 
-    // Colors
     const darkPurple = [24, 5, 19];
     const pink = [255, 0, 230];
     const white = [255, 255, 255];
@@ -31,20 +29,23 @@ const Print = ({ setPage, events, setEvents }) => {
       align: "center",
     });
 
-    // Pink underline
+    // Underline
     doc.setDrawColor(...pink);
     doc.setLineWidth(2);
     doc.line(45, 30, pageWidth - 45, 30);
 
-    // Card shadow
+    // Dynamic card height
+    const cardHeight = events.length * 20 + 30;
+
+    // Shadow
     doc.setFillColor(...darkPink);
-    doc.roundedRect(17, 42, 176, 125, 6, 6, "F");
+    doc.roundedRect(17, 42, 176, cardHeight, 6, 6, "F");
 
     // White card
     doc.setFillColor(...white);
-    doc.roundedRect(15, 40, 176, 125, 6, 6, "F");
+    doc.roundedRect(15, 40, 176, cardHeight, 6, 6, "F");
 
-    // Event text
+    // Events
     doc.setTextColor(...pink);
     doc.setFontSize(14);
     doc.setFont("helvetica", "italic");
@@ -62,7 +63,6 @@ const Print = ({ setPage, events, setEvents }) => {
       );
     });
 
-    // Save
     doc.save("itinerary.pdf");
   };
 

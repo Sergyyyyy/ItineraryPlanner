@@ -1,26 +1,23 @@
-import jsPDF from 'jspdf'
-
-const clearEvents = () => {
-  setEvents([]);
-}
-
-const downloadPDF = () => {
-  const doc = new jsPDF();
-
-  doc.text("My Itinerary", 20, 20);
-
-  events.forEach((event, index) => {
-    doc.text(
-      `${event.eventName} - ${event.eventTime}`,
-      20,
-      40 + index * 10
-    );
-  });
-
-  doc.save("itinerary.pdf");
-};
+import jsPDF from "jspdf";
 
 const Print = ({ setPage, events, setEvents }) => {
+  const clearEvents = () => {
+    setEvents([]);
+  };
+
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+
+    doc.text("My Itinerary", 20, 20);
+
+    events.forEach((event, index) => {
+      doc.text(`${event.eventName} - ${event.eventTime}`, 20, 40 + index * 10);
+    });
+
+    doc.save("itinerary.pdf");
+  };
+
+  
   return (
     <>
       <div className="form-container">

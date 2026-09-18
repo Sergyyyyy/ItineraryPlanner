@@ -24,7 +24,7 @@ const Form = ({setPage, event, setEvent, events, setEvents}) => {
     <>
       <div className="form-container">
         <div className="form-top-container">
-          <p>⁠♡Itinerary Planner⁠♡</p>
+          <p>⁠♡  Itinerary Planner ⁠♡</p>
         </div>
 
         <div className="form-mid-container">
@@ -32,10 +32,10 @@ const Form = ({setPage, event, setEvent, events, setEvents}) => {
             <Input event={event} setEvent={setEvent} />
             <div className="btn-container">
               <button className="btn btn-clearEvent" onClick={clearEvent}>
-                Clear events -
+                Clear
               </button>
               <button className="btn btn-addEvent" onClick={addEvent}>
-                Add new event +
+                Add new Event
               </button>
             </div>
           </div>

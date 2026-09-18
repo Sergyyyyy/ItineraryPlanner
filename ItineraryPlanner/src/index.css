@@ -93,12 +93,17 @@ body {
   gap: 10px;
 }
 
-.btn-addEvent{
+.btn-addEvent {
   background-color: #882468;
   color: #fff;
 }
 
-.btn-clearEvent{
+.btn-clearEvent {
+  background-color: #882468;
+  color: #fff;
+}
+
+.btn-downloadEvent {
   background-color: #882468;
   color: #fff;
 }

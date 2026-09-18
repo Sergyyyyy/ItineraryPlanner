@@ -40,7 +40,7 @@ const Form = ({setPage, event, setEvent, events, setEvents}) => {
             </div>
           </div>
 
-          <button className="btn btn-downloadEvent" onClick={() => setPage("print")}>Download</button>
+          <button className="btn btn-downloadEvent" onClick={() => setPage("print")}>View Events</button>
         </div>
       </div>
     </>

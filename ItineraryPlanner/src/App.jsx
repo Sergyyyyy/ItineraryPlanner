@@ -15,7 +15,7 @@ function App() {
     <>
       <div className="app-container">
         {page === 'form' && <Form setPage={setPage} event={event} setEvent={setEvent} events={events} setEvents={setEvents}/>}
-        {page === 'print' && <Print setPage={setPage} events={events}/>}
+        {page === 'print' && <Print setPage={setPage} events={events} setEvents={setEvents}/>}
       </div>
     </>
   );

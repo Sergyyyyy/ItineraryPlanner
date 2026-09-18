@@ -21,20 +21,6 @@ A simple and interactive itinerary planner built with React. Create multiple eve
 - **jsPDF** - PDF generation
 - **Vite** - Development environment and build tool
 
-##📸 Preview
-
-### Application
-
-<!-- Add your application screenshot here -->
-
-![Itinerary Planner Preview](./screenshots/preview.png)
-
-### Generated PDF
-
-<!-- Add your PDF screenshot here -->
-
-![Generated Itinerary PDF](./screenshots/pdf-preview.png)
-
 ## Getting Started
 
 ### Prerequisites

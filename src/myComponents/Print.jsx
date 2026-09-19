@@ -64,16 +64,18 @@ const Print = ({ setPage, events, setEvents }) => {
     });
 
     const pdfBlob = doc.output("blob");
-    const file = new File([pdfBlob], "itinerary.pdf", {
-      type: "application/pdf",
-    });
 
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      await navigator.share({
-        files: [file],
-        title: "My Itinerary",
-      });
+    // Mobile
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      const pdfURL = URL.createObjectURL(pdfBlob);
+      window.open(pdfURL, "_blank");
+
+      setTimeout(() => {
+        URL.revokeObjectURL(pdfURL);
+      }, 10000);
     }
+
+    // PC
     else {
       doc.save("itinerary.pdf");
     }

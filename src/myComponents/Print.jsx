@@ -5,7 +5,7 @@ const Print = ({ setPage, events, setEvents }) => {
     setEvents([]);
   };
 
-  const downloadPDF = () => {
+  const downloadPDF = async () => {
     const doc = new jsPDF();
 
     const pageWidth = doc.internal.pageSize.getWidth();
@@ -63,7 +63,20 @@ const Print = ({ setPage, events, setEvents }) => {
       );
     });
 
-    doc.save("itinerary.pdf");
+    const pdfBlob = doc.output("blob");
+    const file = new File([pdfBlob], "itinerary.pdf", {
+      type: "application/pdf",
+    });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: "My Itinerary",
+      });
+    }
+    else {
+      doc.save("itinerary.pdf");
+    }
   };
 
   return (
